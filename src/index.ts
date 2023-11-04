@@ -6,7 +6,7 @@ import { generateSession, joinSession, play } from "./logic";
 require("dotenv").config();
 
 const app = express();
-const PORT = process.env.PORT || 8099;
+const PORT = process.env.PORT || 8095;
 
 app.use(express.json());
 
@@ -37,4 +37,3 @@ wsServer.on("connection", function connection(ws) {
   let sessionId = generateSession(ws); // ok
   ws.send(sessionId);
 });
-
